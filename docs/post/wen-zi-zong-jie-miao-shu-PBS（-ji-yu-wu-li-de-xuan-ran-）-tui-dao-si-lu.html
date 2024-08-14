@@ -10,9 +10,9 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="渲染方程是基于物理（辐射度量学）和数学推导的一个等式，用于更加精确的描述光照。">
+<meta name="description" content="1. 渲染方程是基于物理（辐射度量学）和数学推导的一个等式，用于更加精确的描述光照。">
 <meta property="og:title" content="文字总结描述PBS（基于物理的渲染）推导思路">
-<meta property="og:description" content="渲染方程是基于物理（辐射度量学）和数学推导的一个等式，用于更加精确的描述光照。">
+<meta property="og:description" content="1. 渲染方程是基于物理（辐射度量学）和数学推导的一个等式，用于更加精确的描述光照。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://chenxikai.github.io/post/wen-zi-zong-jie-miao-shu-PBS%EF%BC%88-ji-yu-wu-li-de-xuan-ran-%EF%BC%89-tui-dao-si-lu.html">
 <meta property="og:image" content="https://avatars.githubusercontent.com/u/4225345?v=4">
@@ -73,12 +73,14 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><p>渲染方程是基于物理（辐射度量学）和数学推导的一个等式，用于更加精确的描述光照。<br>
-实际操作中自发光就是一个固定的颜色，渲染方程去掉“自发光”部分，就是著名的反射等式，剩下的事情就是求反射等式。<br>
-物理世界中的光源通常是一个面光源，实时渲染不太可能实现，因此通常用若干个精确光源替代，发现反射等式就只剩下f(l,v)是未知的。<br>
-BRDF表示一束光沿着入射方向l到达表面某点有多少能量被反射到观察方向v上，f(l,v)恰巧可以用BRDF计算得出！<br>
-BRDF可以通过光学仪器进行测量采样，学术界也有基于物理和光学归纳的通用数学模型，通常是对“高光反射项”和“漫反射项”进行数学建模，例如常见的漫反射BRDF有Lambert和DIsney<br>
-这些通用的BRDF只能尽可能的去接近真实材质，并且很难用一种BRDF模型描述所有的材质</p></div>
+<div class="markdown-body" id="postBody"><ol>
+<li>渲染方程是基于物理（辐射度量学）和数学推导的一个等式，用于更加精确的描述光照。</li>
+<li>实际操作中自发光就是一个固定的颜色，渲染方程去掉“自发光”部分，就是著名的反射等式，剩下的事情就是求反射等式。</li>
+<li>物理世界中的光源通常是一个面光源，实时渲染不太可能实现，因此通常用若干个精确光源替代，发现反射等式就只剩下f(l,v)是未知的。</li>
+<li>BRDF表示一束光沿着入射方向l到达表面某点有多少能量被反射到观察方向v上，f(l,v)恰巧可以用BRDF计算得出！</li>
+<li>BRDF可以通过光学仪器进行测量采样，学术界也有基于物理和光学归纳的通用数学模型，通常是对“高光反射项”和“漫反射项”进行数学建模，例如常见的漫反射BRDF有Lambert和DIsney</li>
+<li>这些通用的BRDF只能尽可能的去接近真实材质，并且很难用一种BRDF模型描述所有的材质</li>
+</ol></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
